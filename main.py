@@ -56,7 +56,7 @@ async def prefix(ctx, prefix):
     await ctx.send(response.substitute(prefix=prefix))
 
 @client.command(pass_context = True)
-async def changenick(ctx, user: discord.Member, nickname):
+async def changenick(ctx, user: discord.Member, *, nickname):
     await client.change_nickname(user, nickname)
 
 client.run(config['config']['token'])
