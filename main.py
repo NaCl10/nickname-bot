@@ -59,4 +59,4 @@ async def prefix(ctx, prefix):
 async def changenick(ctx, user: discord.Member, nickname):
     await client.change_nickname(user, nickname)
 
-clinet.run(config['config']['token'])
+client.run(config['config']['token'])
