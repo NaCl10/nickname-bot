@@ -36,7 +36,14 @@ async def on_ready():
 @client.command(pass_context=True)
 async def help(ctx):
     '''Help command'''
-    #TODO: Actually write the help command
+    embed = discord.Embed(title='Help',
+            color=discord.Color(0x000000))
+    embed.add_field(name='help', value='Shows this help message.', inline=False)
+    embed.add_field(name='ping', value='Checks if the bot is online and working and displays bot latency', inline=False)
+    embed.add_field(name='prefix', value='Usage: `prefix <prefix>`\nSets `<prefix>` to be the new prefix in this server.\nNOTE: Administrator only.', inline=False)
+    embed.add_field(name='nickname', value='Usage: `nickname <user id/mention> <new nickname>`\n`<user id/mention>` should be the user ID or @mention of a user **in this server** whose nickname you would like to change. <new nickname> should be what you would like to set their nickname to.', inline=False)
+    embed.set_footer(text='prefix: ' + await get_prefix(bot=client, message=ctx))
+    await ctx.send(embed=embed)
 
 @client.command(pass_context=True)
 async def ping(ctx):
