@@ -56,7 +56,7 @@ async def prefix(ctx, prefix):
     await ctx.send(response.substitute(prefix=prefix))
 
 @client.command(pass_context = True)
-async def changenick(ctx, user: discord.Member, *, nickname):
+async def nickname(ctx, user: discord.Member, *, nickname):
     try:
         await user.edit(nick=nickname, reason='Action requested by ' + str(ctx.author) + ' fulfilled by ' + str(client.user))
     except discord.errors.Forbidden:
