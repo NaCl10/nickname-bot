@@ -1,6 +1,6 @@
 # Nickname bot
 
-## WARNING: THIS BOT IS HORRIBLY INSECURE AND SHOULD ABSOLUTELY **NOT** BE USED EXCEPT IN PRIVATE SERVERS ("just for friends" type situations)
+## ⚠️WARNING: THIS BOT IS HORRIBLY INSECURE AND SHOULD ABSOLUTELY **NOT** BE USED EXCEPT IN PRIVATE SERVERS ("just for friends" type situations)⚠️
 
 It has **NO** restrictions on who can and can't change whose nickname(s), and there's **NO WAY** to add that functionality (unless you want to fork the project and add it yourself).  
 Technically you could restrict who can change whose nickname by placing the bot's role above roles with users you want users to be able to change the nicknames of, but below roles with users you don't want users to be able to change the nicknames of, but that's rather crude.  
