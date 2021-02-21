@@ -57,6 +57,9 @@ async def prefix(ctx, prefix):
 
 @client.command(pass_context = True)
 async def changenick(ctx, user: discord.Member, *, nickname):
-    await client.change_nickname(user, nickname)
+    try:
+        await user.edit(nick=nickname, reason='Action requested by ' + str(ctx.author) + ' fulfilled by ' + str(client.user))
+    except discord.errors.Forbidden:
+        await ctx.send('Looks like I don\'t have permission to change that user\'s nickname! Please ensure that my role is above that user\'s highest role in the role list and that I have the "Manage Nicknames" permission.')
 
 client.run(config['config']['token'])
