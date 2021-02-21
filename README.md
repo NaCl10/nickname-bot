@@ -66,3 +66,8 @@ Finally, re-create the container with the new image:
 ```shell
 docker run -v /path/to/config.ini:/bot/config.ini --restart always -d --name naclbot nacl10/nickname-bot
 ```
+
+## Contributing
+Just open a pull request! That's what open source is all about. 
+
+If you don't know how to code but you found a bug or have an issue, open an issue.
