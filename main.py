@@ -31,7 +31,7 @@ client = commands.Bot(command_prefix=get_prefix, help_command=None)
 async def on_ready():
     '''Set status and log that we logged in'''
     print('Logged in as {0.user}'.format(client))
-    await clinet.change_presence(activity=discord.Game(config['config']['status']))
+    await client.change_presence(activity=discord.Game(config['config']['status']))
 
 @client.command(pass_context=True)
 async def help(ctx):
