@@ -14,6 +14,6 @@ jobs:
     - name: Build and Publish Tag Docker image
       uses: VaultVulp/gp-docker-action@1.2.0
       with:
-        github-token: ${{ secrets.GITHUB_TOKEN }} # Provide GITHUB_TOKEN to login into the GitHub Packages
+        github-token: ${{ secrets.GHCR_TOKEN }} # Provide GITHUB_TOKEN to login into the GitHub Packages
         image-name: my-cool-service # Provide only Docker image name
         extract-git-tag: true # Provide flag to extract Docker image tag from git reference
