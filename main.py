@@ -6,8 +6,6 @@ import discord
 from discord import app_commands
 import traceback
 
-TESTING_GUILD = discord.Object(id=593483503241396285)
-
 # Config
 config = configparser.ConfigParser()
 if not path.isfile('config.ini'):
@@ -24,8 +22,7 @@ class CommandsClient(discord.Client):
         self.tree = app_commands.CommandTree(self)
 
     async def setup_hook(self):
-        self.tree.copy_global_to(guild=TESTING_GUILD)
-        await self.tree.sync(guild=TESTING_GUILD)
+        await self.tree.sync()
 
 class ChangeNickname(discord.ui.Modal, title="Change Nickname"):
     def __init__(self, *, member: discord.Member, interaction: discord.Interaction):
