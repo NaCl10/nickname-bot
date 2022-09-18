@@ -34,6 +34,8 @@ class ChangeNickname(discord.ui.Modal, title="Change Nickname"):
     async def on_submit(self, interaction: discord.Interaction):
         try:
             await self.member.edit(nick=str(self.children[0].value), reason='Action requested by ' + str(self.interaction.user))
+            embed = discord.Embed(title="Your nickname was changed!", description="**To**: " + str(self.children[0].value) + "\n**By**: " + str(self.interaction.user) + "\n**In**: " + str(self.interaction.guild))
+            await self.member.send(embed=embed)
         except discord.errors.Forbidden:
             await interaction.response.send_message('Looks like I don\'t have permission to change that user\'s nickname! Please ensure that my role is above that user\'s highest role in the role list and that I have the "Manage Nicknames" permission.', ephemeral=True)
         else:
