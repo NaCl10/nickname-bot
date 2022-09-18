@@ -1,8 +1,7 @@
 name: "Build and push to GHCR"
  
 on:
-  release:
-    types: [published]
+  push:
  
   workflow_dispatch:
 
