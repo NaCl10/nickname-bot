@@ -65,7 +65,7 @@ docker stop nickname-bot && docker rm nickname-bot
 ```
 Finally, re-create the container with the new image:
 ```shell
-docker run -v /path/to/config.ini:/bot/config.ini --restart always -d --name naclbot ghcr.io/nacl10/nickname-bot/nickname-bot
+docker run -v /path/to/config.ini:/bot/config.ini --restart always -d --name nickname-bot ghcr.io/nacl10/nickname-bot/nickname-bot
 ```
 
 ## Contributing
