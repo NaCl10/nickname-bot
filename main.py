@@ -49,7 +49,7 @@ client=CommandsClient(intents=intents)
 
 @client.event
 async def on_ready():
-    print(f'Logged in as {client.user}')
+    print('Logged in as {0.user}'.format(client))
     await client.change_presence(activity=discord.Game(config['config']['status']))
 
 @client.tree.command()
